@@ -10,3 +10,7 @@ def get_soup() -> BeautifulSoup:
     soup = BeautifulSoup(html, 'html.parser')
     return soup
 
+def get_headlines(soup: BeautifulSoup) -> lisst[str]:
+    headlines: set = set()
+
+    for h in soup.findAll('h2', class_='sc-')
