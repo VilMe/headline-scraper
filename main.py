@@ -18,3 +18,7 @@ def get_headlines(soup: BeautifulSoup) -> lisst[str]:
         headlines.add(headline)
 
     return sorted(headlines)
+
+def main():
+    soup: BeautifulSoup = get_soup()
+    headlines: list[str] = get_headlines()
