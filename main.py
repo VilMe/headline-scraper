@@ -13,4 +13,8 @@ def get_soup() -> BeautifulSoup:
 def get_headlines(soup: BeautifulSoup) -> lisst[str]:
     headlines: set = set()
 
-    for h in soup.findAll('h2', class_='sc-fa814188-3')
+    for h in soup.findAll('h2', class_='sc-fa814188-3'):
+        headline: str = h.contents[0].lower()
+        headlines.add(headline)
+
+    return sorted(headlines)
