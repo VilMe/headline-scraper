@@ -13,7 +13,7 @@ def get_soup() -> BeautifulSoup:
 def get_headlines(soup: BeautifulSoup) -> list[str]:
     headlines: set = set()
 
-    for h in soup.findAll('h2', class_="sc-"):
+    for h in soup.find_all('h2'):
         headline: str = h.contents[0].lower()
         headlines.add(headline)
 
@@ -23,7 +23,7 @@ def main():
     soup: BeautifulSoup = get_soup()
     headlines: list[str] = get_headlines(soup=soup)
     for headline in headlines:
-        print(headlines)
+        print(headline)
 
 
 if __name__ == '__main__':
