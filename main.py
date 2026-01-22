@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import re
 
 def get_soup() -> BeautifulSoup:
     headers: dict = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'}
@@ -13,7 +14,7 @@ def get_soup() -> BeautifulSoup:
 def get_headlines(soup: BeautifulSoup) -> list[str]:
     headlines: set = set()
 
-    for h in soup.find_all('h2'):
+    for h in soup.find_all("h2", class_="sc-feaf8701-3"):
         headline: str = h.contents[0].lower()
         headlines.add(headline)
 
