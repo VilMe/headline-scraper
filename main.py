@@ -24,6 +24,19 @@ def check_headlines(headlines: list, term: str):
     term_list: list[str] = []
     terms_found: int = 0
 
+    for i, headline in enumerate(headlines, start=1):
+        if term.lower() in headline:
+            terms_found += 1
+            term_list.append(headline)
+            print(f'{i}: {headline.capitalize()} <---------------------- "{term}"')
+        else:
+            print(f'{i}: {headline.capitalize()}')
+
+    print('-------------------------------')
+    if terms_found:
+        
+
+
 def main():
     soup: BeautifulSoup = get_soup()
     headlines: list[str] = get_headlines(soup=soup)
