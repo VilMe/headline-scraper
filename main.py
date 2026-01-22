@@ -20,6 +20,10 @@ def get_headlines(soup: BeautifulSoup) -> list[str]:
 
     return sorted(headlines)
 
+def check_headlines(headlines: list, term: str):
+    term_list: list[str] = []
+    terms_found: int = 0
+
 def main():
     soup: BeautifulSoup = get_soup()
     headlines: list[str] = get_headlines(soup=soup)
