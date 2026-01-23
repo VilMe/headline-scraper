@@ -35,13 +35,24 @@ def check_headlines(headlines: list, term: str):
     print('-------------------------------')
     if terms_found:
         print(f'"{term}" was mentioned {terms_found} times.')
+        print('-------------------------------')
+
+        for i,headline in enumerate(term_list, start=1):
+            print(f'{i}: {headline.capitalize()}')
+
+        else:
+            print(f'No matches found: for "{term}"')
+            print('-------------------------------')
 
 
 def main():
     soup: BeautifulSoup = get_soup()
     headlines: list[str] = get_headlines(soup=soup)
-    for headline in headlines:
-        print(headline)
+
+    # for headline in headlines:
+    #     print(headline)
+    user_input: str = 'ukraine'
+    check_headlines(headlines, user_input)
 
 
 if __name__ == '__main__':
