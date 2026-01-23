@@ -40,9 +40,9 @@ def check_headlines(headlines: list, term: str):
         for i,headline in enumerate(term_list, start=1):
             print(f'{i}: {headline.capitalize()}')
 
-        else:
-            print(f'No matches found: for "{term}"')
-            print('-------------------------------')
+    else:
+        print(f'No matches found: for "{term}"')
+        print('-------------------------------')
 
 
 def main():
@@ -51,7 +51,7 @@ def main():
 
     # for headline in headlines:
     #     print(headline)
-    user_input: str = 'ukraine'
+    user_input: str = 'davos'
     check_headlines(headlines, user_input)
 
 
