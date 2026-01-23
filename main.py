@@ -34,7 +34,7 @@ def check_headlines(headlines: list, term: str):
 
     print('-------------------------------')
     if terms_found:
-        
+        print(f'"{term}" was mentioned {terms_found} times.')
 
 
 def main():
