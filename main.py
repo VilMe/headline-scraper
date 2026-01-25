@@ -51,7 +51,7 @@ def main():
 
     # for headline in headlines:
     #     print(headline)
-    user_input: str = 'davos'
+    user_input: str = input('What term should we search for? buddy ')
     check_headlines(headlines, user_input)
 
 
