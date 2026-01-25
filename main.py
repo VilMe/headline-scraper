@@ -25,10 +25,9 @@ def check_headlines(headlines: list, term: str):
     terms_found: int = 0
 
     for i, headline in enumerate(headlines, start=1):
-        term = term.lower()
         # search_pattern = re.compile(term)
         # if term.lower() in headline:
-        if re.match(term, headline):
+        if re.match(term.lower(), headline):
             terms_found += 1
             term_list.append(headline)
             print(f'{i}: {headline.capitalize()} <---------------------- "{term}"')
